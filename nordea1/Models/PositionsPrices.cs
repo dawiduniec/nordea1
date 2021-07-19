@@ -1,8 +1,10 @@
-﻿namespace nordea1
+﻿using System.Collections.Generic;
+
+namespace nordea1
 {
     public struct PositionsPrices
     {
-        public Price[] Prices;
+        public List<Price> Prices;
         public Position[] Positions;
     }
 }

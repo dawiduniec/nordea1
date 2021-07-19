@@ -15,7 +15,7 @@ namespace nordea1.Helpers
                 Positions = fixture
                     .CreateMany<Position>(positionCount)
                     .ToArray(),
-                Prices = fixture.CreateMany<Price>(priceCount).ToArray()
+                Prices = fixture.CreateMany<Price>(priceCount).ToList()
             };
 
             CreateProductKeyRelation(positionCount, priceCount, result);
@@ -30,6 +30,7 @@ namespace nordea1.Helpers
             for (var i = 0; i < positionCount; i++)
             {
                 result.Prices[randomPrices[i]].ProductKey = result.Positions[i].ProductKey;
+                result.Prices[randomPrices[i]].Date = result.Positions[i].Date;
             }
         }
 
