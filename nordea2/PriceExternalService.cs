@@ -18,18 +18,18 @@ namespace Nordea2
         public Task<Price[]> GetPricesFromWebService1()
         {
             var result = GenerateRandomPriceData();
-            return Task.FromResult(result);
+            return Task.Run(() => result);
         }
         public Task<Price[]> GetPricesFromWebService2()
         {
             var result = GenerateRandomPriceData();
-            return Task.FromResult(result);
+            return Task.Run(() => result);
         }
 
         public Task<Price[]> GetPricesFromWebService3()
         {
             var result = GenerateRandomPriceData();
-            return Task.FromResult(result);
+            return Task.Run(() => result);
         }
     }
 }
